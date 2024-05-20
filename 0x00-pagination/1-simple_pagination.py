@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module provides a Server class to paginate a database of popular baby names.
+This module provides a Server class to paginat
 """
 
 import csv
@@ -17,7 +17,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
         page_size (int): The number of items per page.
 
     Returns:
-        Tuple[int, int]: A tuple containing the start index and end index.
+        Tuple[int, int]:
     """
     start_index = (page - 1) * page_size
     end_index = start_index + page_size
@@ -25,7 +25,7 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """Server class to paginate
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -55,9 +55,9 @@ class Server:
             List[List]: The list of rows for the given page.
         """
         assert isinstance(
-            page, int) and page > 0, "Page must be an integer greater than 0."
+            page, int) and page > 0, "Page mus 0."
         assert isinstance(
-            page_size, int) and page_size > 0, "Page size must be an integer greater than 0."
+            page_size, int) and page_size > 0, "Page  greater than 0."
 
         start_index, end_index = index_range(page, page_size)
         dataset = self.dataset()

@@ -9,7 +9,7 @@ from typing import List, Dict, Any
 
 
 class Server:
-    """Server class to paginate a database of popular baby names.
+    """Server class to paginate.
     """
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -41,19 +41,19 @@ class Server:
     def get_hyper_index(self, index: int = None,
                         page_size: int = 10) -> Dict[str, Any]:
         """
-        Get a page of data with pagination metadata, resilient to deletions.
+        Get a page resilient to deletions.
 
         Args:
             index (int): The start index for the data.
             page_size (int): The number of items per page.
 
         Returns:
-            Dict[str, Any]: A dictionary containing pagination metadata and the page of data.
+            Dict[str, Any]: A dictionary containing
         """
         assert isinstance(
-            index, int) and index >= 0, "Index must be a non-negative integer."
+            index, int) and index >= 0, "Index ."
         assert isinstance(
-            page_size, int) and page_size > 0, "Page size must be a positive integer."
+            page_size, int) and page_size > 0, "Page"
 
         indexed_dataset = self.indexed_dataset()
         total_items = len(indexed_dataset)
