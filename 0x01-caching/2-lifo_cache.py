@@ -36,4 +36,3 @@ class LIFOCache(BaseCaching):
         If key is None or if the key doesn't exist.
         """
         return self.cache_data.get(key)
-
