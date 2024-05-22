@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """ FIFOCache is a caching system with a FIFO eviction policy
+    """ FIFOCache is a caching system.
     """
 
     def __init__(self):
@@ -18,12 +18,13 @@ class FIFOCache(BaseCaching):
     def put(self, key, item):
         """ Add an item in the cache
         If key or item is None, this method should not do anything.
-        If the number of items in self.cache_data is higher than BaseCaching.MAX_ITEMS:
+        If the number of items in self.
         you must discard the first item put in cache (FIFO algorithm)
-        you must print DISCARD: with the key discarded and following by a new line
+        you must print DISCARD: with the key discarded.
         """
         if key is not None and item is not None:
-            if key not in self.cache_data and len(self.cache_data) >= BaseCaching.MAX_ITEMS:
+            if key not in self.cache_data and len(
+                    self.cache_data) >= BaseCaching.MAX_ITEMS:
                 first_key = self.order.pop(0)
                 print("DISCARD: {}".format(first_key))
                 del self.cache_data[first_key]
@@ -37,7 +38,6 @@ class FIFOCache(BaseCaching):
     def get(self, key):
         """ Get an item by key
         Return the value in self.cache_data linked to key.
-        If key is None or if the key doesn't exist in self.cache_data, return None.
+        If key is None or if the key doesn't.
         """
         return self.cache_data.get(key)
-

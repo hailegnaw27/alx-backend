@@ -6,7 +6,7 @@ from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """ LIFOCache is a caching system with a LIFO eviction policy
+    """ LIFOCache is a caching system with.
     """
 
     def __init__(self):
@@ -18,9 +18,9 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         """ Add an item in the cache
         If key or item is None, this method should not do anything.
-        If the number of items in self.cache_data is higher than BaseCaching.MAX_ITEMS:
+        If the number of items in self.cache_data.
         you must discard the last item put in cache (LIFO algorithm)
-        you must print DISCARD: with the key discarded and following by a new line
+        you must print DISCARD:
         """
         if key is not None and item is not None:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
@@ -33,5 +33,7 @@ class LIFOCache(BaseCaching):
     def get(self, key):
         """ Get an item by key
         Return the value in self.cache_data linked to key.
-        If key is None or if the key doesn't exist in self.cache_d
+        If key is None or if the key doesn't exist.
+        """
+        return self.cache_data.get(key)
 
