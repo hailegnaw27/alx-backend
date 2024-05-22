@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-"""
-caching
+"""Most Recently Used caching module.
 """
 from collections import OrderedDict
 
@@ -8,17 +7,18 @@ from base_caching import BaseCaching
 
 
 class MRUCache(BaseCaching):
-    """most recently used
+    """Represents an object that allows storing and
+    retrieving items from a dictionary with an MRU
+    removal mechanism when the limit is reached.
     """
     def __init__(self):
-        """
-        init.
+        """Initializes the cache.
         """
         super().__init__()
         self.cache_data = OrderedDict()
 
     def put(self, key, item):
-        """store
+        """Adds an item in the cache.
         """
         if key is None or item is None:
             return
@@ -32,7 +32,7 @@ class MRUCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """Retrieve
+        """Retrieves an item by key.
         """
         if key is not None and key in self.cache_data:
             self.cache_data.move_to_end(key, last=False)
